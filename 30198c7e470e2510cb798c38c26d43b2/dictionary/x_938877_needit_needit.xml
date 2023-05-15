@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4ad988be470e2510cb798c38c26d43ad" label="NeedIt" max_length="40" name="x_938877_needit_needit" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="normal" label="Priority" mandatory="true" max_length="40" name="u_priority" type="string">
+            <choice>
+                <element inactive_on_update="false" label="critical" sequence="0" value="critical"/>
+                <element inactive_on_update="false" label="normal" sequence="1" value="normal"/>
+                <element inactive_on_update="false" label="non critical" sequence="2" value="non critical"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Legal" sequence="0" value="legal"/>
+                <element inactive_on_update="false" label="Human Resources" sequence="1" value="human resources"/>
+                <element inactive_on_update="false" label="IT" sequence="2" value="It"/>
+            </choice>
+        </element>
+        <element label="When needed" max_length="40" name="when_needed" type="glide_date_time"/>
+        <index name="index">
+            <element name="sys_class_name"/>
+        </index>
+        <index name="index2">
+            <element name="u_requested_for"/>
+        </index>
+    </element>
+</database>
